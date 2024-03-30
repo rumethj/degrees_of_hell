@@ -30,6 +30,9 @@ public:
 
     void DeductMotivation(int motivation);
 
+    void AddSuccess(int success);
+
+
     void UpdateYear();
 };
 

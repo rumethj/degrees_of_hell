@@ -52,6 +52,11 @@ void CPlayer::DeductMotivation(int motivation)
     mMotivation -= motivation;
 }
 
+void CPlayer::AddSuccess(int success)
+{
+    mSuccess += success;
+}
+
 void CPlayer::UpdateYear()
 {
     mYear += 1;

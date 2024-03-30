@@ -6,6 +6,11 @@
 
 #include "CSpace.h"
 
+// CHECK include these in header or cpp????
+#include "Assessment.h"
+#include "SkipClasses.h"
+
+
 
 class Board
 {

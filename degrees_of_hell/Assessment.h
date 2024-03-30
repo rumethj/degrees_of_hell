@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 #include "CSpace.h"
 
@@ -10,6 +11,7 @@ private:
     int mMotivationalCost;
     int mSuccessAchievement;
     int mYear;
+    std::vector<CPlayer*> mpCompletedBy;
 
 public:
     Assessment(int type,std::string name,int motivationalCost,int successAchievement,int year);

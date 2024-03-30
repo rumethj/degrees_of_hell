@@ -15,6 +15,7 @@ int main()
     Game* degreesGame = new Game(players, boardSetUpFilePath, rounds);
 
     degreesGame->StartGame();
+    degreesGame->EndGame();
 
     return 0;
 }

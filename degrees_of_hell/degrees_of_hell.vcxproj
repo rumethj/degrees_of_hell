@@ -133,6 +133,7 @@
     <ClCompile Include="CSpace.cpp" />
     <ClCompile Include="degrees_of_hell.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="SkipClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assessment.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CSpace.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="SkipClasses.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="degrees.txt" />

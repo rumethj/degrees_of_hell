@@ -1,5 +1,4 @@
 #include "Board.h"
-#include "Assessment.h"
 
 #include <iostream>
 
@@ -110,7 +109,7 @@ Board::Board(std::string setUpFilePath)
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1] + " " + tokens[2];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new SkipClasses(type, name));
         }
         
         
