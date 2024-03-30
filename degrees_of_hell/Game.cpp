@@ -11,6 +11,7 @@ Game::Game(std::vector<std::string> players, std::string filePath, int rounds)
 {
     InitialiseBoard(filePath);
     InitialisePlayers(players);
+    mpSpinner = new Spinner();
 
     mRounds = rounds;
     mCurrentRound = 1;
@@ -78,9 +79,7 @@ void Game::StartGame()
         std::cout << "=========" << std::endl;
         for (int j = 0; j < mPlayers.size(); j++)
         {
-            
-
-            int playerSpin = Random();
+            int playerSpin = mpSpinner->Random();
             std::cout << mPlayers[j]->GetName() << " spins " << playerSpin << std::endl;
 
             int newPlayerPosition = mPlayers[j]->GetPosition() + playerSpin;

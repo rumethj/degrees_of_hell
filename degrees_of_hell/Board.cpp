@@ -42,7 +42,7 @@ Board::Board(std::string setUpFilePath)
     mPlagiarismHearingIndex = 0;
     mAccusedOfPlagiarismIndex = 0;
 
-    std::ifstream inputFile(setUpFilePath); //"data/degrees.txt");
+    std::ifstream inputFile(setUpFilePath); //"data/degrees.txt")
     if (!inputFile) {
         throw std::runtime_error("Unable to open file: " + setUpFilePath);
     }

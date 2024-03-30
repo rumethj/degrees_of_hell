@@ -5,6 +5,7 @@
 
 #include "CPlayer.h"
 #include "Board.h"
+#include "Spinner.h"
 
 
 class Game
@@ -12,6 +13,7 @@ class Game
 private:
     std::vector<CPlayer*> mPlayers;
     Board* mpBoard;
+    Spinner* mpSpinner;
     int mRounds;
     int mCurrentRound;
 

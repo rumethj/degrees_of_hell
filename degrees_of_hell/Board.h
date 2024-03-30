@@ -32,7 +32,6 @@ public:
     int GetSize() const;
     int GetPlagiarismHearingIndex() const;
 
-
     std::string GetSpaceName(int spacePos) const;
 
     void ShowBoard();
