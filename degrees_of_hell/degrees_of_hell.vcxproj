@@ -133,6 +133,7 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CSpace.cpp" />
     <ClCompile Include="degrees_of_hell.cpp" />
+    <ClCompile Include="ExtraCurricular.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="PlagiarismHearing.cpp" />
     <ClCompile Include="SkipClasses.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CSpace.h" />
+    <ClInclude Include="ExtraCurricular.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="PlagiarismHearing.h" />
     <ClInclude Include="SkipClasses.h" />

@@ -11,6 +11,8 @@
 #include "SkipClasses.h"
 #include "PlagiarismHearing.h"
 #include "AccusedOfPlagiarism.h"
+#include "ExtraCurricular.h"
+
 
 class CPlayer;
 class CSpace;

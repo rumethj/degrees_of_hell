@@ -44,11 +44,6 @@ void Game::EndGame()
         {
             mostSuccess = mPlayers[i]->GetSuccess();
         }
-
-        for (int j = 0; j < mPlayers[i]->mCompletedAssessments.size(); j++)
-        {
-            std::cout << mPlayers[i]->mCompletedAssessments[j]->GetName() << std::endl;
-        }
         
     }
 

@@ -42,6 +42,9 @@
     <ClCompile Include="AccusedOfPlagiarism.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExtraCurricular.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSpace.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AccusedOfPlagiarism.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtraCurricular.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

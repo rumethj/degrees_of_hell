@@ -15,7 +15,7 @@ private:
     int mSuccess;
     int mPosition;
     Board& mpBoard;
-public:std::vector<CSpace*> mCompletedAssessments;
+    std::vector<CSpace*> mCompletedAssessments;
 
 public:
     CPlayer(std::string name, Board& board);

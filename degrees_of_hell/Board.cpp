@@ -85,9 +85,8 @@ Board::Board(std::string setUpFilePath)
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1] + " " + tokens[2];
             int motivationalCost = std::stoi(tokens[3]);
-            int successScore = 20; //int successScore = std::stoi(tokens[4]); // Make this into constant in the EXtracuricullar
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new ExtraCurricular(type, name, motivationalCost));
         }
         else if (std::stoi(tokens[0]) == 4) // Bonus
         {
