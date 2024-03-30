@@ -1,5 +1,4 @@
 #include "PlagiarismHearing.h"
-#include "CPlayer.h"
 
 PlagiarismHearing::PlagiarismHearing(int type, std::string name)
 	: CSpace(type, name)

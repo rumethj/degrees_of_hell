@@ -2,11 +2,6 @@
 
 #include <iostream>
 
-int Game::Random()
-{
-    return static_cast<int>( static_cast<double> (rand()) / (RAND_MAX + 1) * 10.0f + 1 );
-}
-
 Game::Game(std::vector<std::string> players, std::string filePath, int rounds)
 {
     InitialiseBoard(filePath);
@@ -27,7 +22,7 @@ void Game::InitialisePlayers(std::vector<std::string> players)
 
 void Game::InitialiseBoard(std::string filePath)
 {
-    mpBoard = new Board(filePath);
+    mpBoard = new Board(filePath, *mpSpinner);
 }
 
 void Game::EndGame()
@@ -62,10 +57,6 @@ void Game::EndGame()
 
 void Game::StartGame()
 {
-    //srand(static_cast<unsigned int> (time(0)));
-    srand( 48 ); // Set the seed
-    
-    //mpBoard->ShowBoard();
 
     // Welcome message
     std::cout << "Welcome to Scumbag College" << std::endl;
@@ -88,7 +79,7 @@ void Game::StartGame()
             //std::cout << mPlayers[j]->GetName() << " lands on " << mpBoard->GetSpaceName(mPlayers[j]->GetPosition()) << std::endl;
             mpBoard->RunSpaceAction( *mPlayers[j] );
             
-            if (newPlayerPosition >= mpBoard->GetSize()) // Passes or lands on Welcome Week //mpBoard->GetSpaceName(mPlayers[j]->GetPosition()) == "Welcome Week" || CHECK 
+            if (newPlayerPosition > mpBoard->GetSize()) // Passes Welcome Week //mpBoard->GetSpaceName(mPlayers[j]->GetPosition()) == "Welcome Week" || CHECK 
             {
                 mPlayers[j]->AddMotivation(250);
                 mPlayers[j]->UpdateYear();

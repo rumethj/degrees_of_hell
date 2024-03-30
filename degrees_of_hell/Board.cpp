@@ -37,11 +37,11 @@ std::string Board::GetSpaceName(int spacePos) const
     return mBoard[spacePos]->GetName();
 }
 
-Board::Board(std::string setUpFilePath)
+Board::Board(std::string setUpFilePath, Spinner& spinner)
+    :mSpinner(spinner),
+    mPlagiarismHearingIndex(0),
+    mAccusedOfPlagiarismIndex(0)
 {
-    mPlagiarismHearingIndex = 0;
-    mAccusedOfPlagiarismIndex = 0;
-
     std::ifstream inputFile(setUpFilePath); //"data/degrees.txt")
     if (!inputFile) {
         throw std::runtime_error("Unable to open file: " + setUpFilePath);
@@ -78,7 +78,7 @@ Board::Board(std::string setUpFilePath)
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1] + " " + tokens[2];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new WelcomeWeek(type, name));
         }
         else if (std::stoi(tokens[0]) == 3) // Extra-curricular
         {
@@ -93,14 +93,14 @@ Board::Board(std::string setUpFilePath)
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new Bonus(type, name, spinner));
         }
         else if (std::stoi(tokens[0]) == 5) // Bogus
         {
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new Bogus(type, name, spinner));
         }
         else if (std::stoi(tokens[0]) == 6) // Plagiarism Hearing
         {

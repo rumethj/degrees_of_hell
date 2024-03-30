@@ -8,10 +8,16 @@
 
 // CHECK include these in header or cpp????
 #include "Assessment.h"
+#include "WelcomeWeek.h"
 #include "SkipClasses.h"
 #include "PlagiarismHearing.h"
 #include "AccusedOfPlagiarism.h"
 #include "ExtraCurricular.h"
+#include "Bogus.h"
+#include "Bonus.h"
+
+
+#include "Spinner.h"
 
 
 class CPlayer;
@@ -20,12 +26,13 @@ class CSpace;
 class Board
 {
 private:
+    Spinner& mSpinner;
     std::vector<CSpace*> mBoard;
     int mPlagiarismHearingIndex;
     int mAccusedOfPlagiarismIndex;
 
 public:
-    Board(std::string setUpFilePath);
+    Board(std::string setUpFilePath, Spinner& spinner);
 
     ~Board();
 

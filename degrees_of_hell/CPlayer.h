@@ -1,10 +1,10 @@
 #pragma once
-#include "CSpace.h"
 
 #include <string>
 #include <vector>
 
 class Board;
+class CSpace;
 
 class CPlayer
 {

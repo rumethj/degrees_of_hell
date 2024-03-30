@@ -1,5 +1,4 @@
 #include "Assessment.h"
-#include "CPlayer.h"
 
 Assessment::Assessment( int type,
 	std::string name,

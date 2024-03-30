@@ -1,10 +1,9 @@
 #pragma once
 
+#include "CPlayer.h"
 
 #include <string>
 #include <iostream>
-
-class CPlayer;
 
 class CSpace
 {

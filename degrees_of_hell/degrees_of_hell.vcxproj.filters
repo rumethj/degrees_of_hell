@@ -51,6 +51,12 @@
     <ClCompile Include="Spinner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bogus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WelcomeWeek.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSpace.h">
@@ -86,10 +92,17 @@
     <ClInclude Include="Spinner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bogus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WelcomeWeek.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="degrees.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="seed.txt" />
   </ItemGroup>
 </Project>

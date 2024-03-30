@@ -4,7 +4,7 @@
 class Spinner
 {
 public:
-    Spinner();
+    Spinner(); // CHECK IMPLEMENT THE READ FROM FILE
 
     ~Spinner();
 

@@ -1,5 +1,4 @@
 #include "ExtraCurricular.h"
-#include "CPlayer.h"
 
 ExtraCurricular::ExtraCurricular(int type,
 	std::string name,

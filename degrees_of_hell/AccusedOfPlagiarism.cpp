@@ -1,5 +1,4 @@
 #include "AccusedOfPlagiarism.h"
-#include "CPlayer.h"
 
 AccusedOfPlagiarism::AccusedOfPlagiarism(int type, std::string name)
 	: CSpace(type, name),
