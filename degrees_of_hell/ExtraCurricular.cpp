@@ -26,7 +26,7 @@ void ExtraCurricular::PlayerLands(CPlayer& player)
 
 	if (!playerHasCompleted)
 	{
-		if (mUndertakenBy.empty()) //(mpCompletedBy.size() < 1)
+		if (mUndertakenBy.empty())
 		{
 			if (player.GetMotivation() >= mMotivationalCost)
 			{

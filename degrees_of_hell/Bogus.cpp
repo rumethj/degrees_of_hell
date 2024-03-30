@@ -13,7 +13,7 @@ void Bogus::PlayerLands(CPlayer& player)
 	// Player landing message
 	std::cout << player.GetName() << " lands on " << mName << std::endl;
 
-	int bonusSpin = mSpinner.Random();
+	int bonusSpin = mSpinner.GetRandom();
 
 	switch (bonusSpin)
 	{

@@ -12,7 +12,7 @@ private:
     int mMotivationalCost;
     int mSuccessAchievement;
     int mYear;
-    std::vector<CPlayer*> mpCompletedBy;
+    std::vector<CPlayer*> mCompletedBy;
 
 public:
     Assessment(int type,std::string name,int motivationalCost,int successAchievement,int year);

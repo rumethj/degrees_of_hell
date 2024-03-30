@@ -1,15 +1,13 @@
 #include "Game.h"
 
-#include <iostream>
 
 Game::Game(std::vector<std::string> players, std::string filePath, int rounds)
 {
     InitialiseBoard(filePath);
     InitialisePlayers(players);
-    mpSpinner = new Spinner();
+    mpSpinner = new Spinner("seed.txt"); // CHECK MAGIC NUMBER
 
     mRounds = rounds;
-    mCurrentRound = 1;
 }
 
 void Game::InitialisePlayers(std::vector<std::string> players)
@@ -57,7 +55,6 @@ void Game::EndGame()
 
 void Game::StartGame()
 {
-
     // Welcome message
     std::cout << "Welcome to Scumbag College" << std::endl;
     std::cout << std::endl;
@@ -70,16 +67,15 @@ void Game::StartGame()
         std::cout << "=========" << std::endl;
         for (int j = 0; j < mPlayers.size(); j++)
         {
-            int playerSpin = mpSpinner->Random();
+            int playerSpin = mpSpinner->GetRandom();
             std::cout << mPlayers[j]->GetName() << " spins " << playerSpin << std::endl;
 
             int newPlayerPosition = mPlayers[j]->GetPosition() + playerSpin;
             mPlayers[j]->SetPosition(newPlayerPosition % mpBoard->GetSize());
 
-            //std::cout << mPlayers[j]->GetName() << " lands on " << mpBoard->GetSpaceName(mPlayers[j]->GetPosition()) << std::endl;
             mpBoard->RunSpaceAction( *mPlayers[j] );
             
-            if (newPlayerPosition > mpBoard->GetSize()) // Passes Welcome Week //mpBoard->GetSpaceName(mPlayers[j]->GetPosition()) == "Welcome Week" || CHECK 
+            if (newPlayerPosition > mpBoard->GetSize()) // Passes Welcome Week
             {
                 mPlayers[j]->AddMotivation(250);
                 mPlayers[j]->UpdateYear();
