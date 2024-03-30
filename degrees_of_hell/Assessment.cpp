@@ -30,13 +30,15 @@ void Assessment::PlayerLands( CPlayer& player )
 
 	if (!playerHasCompleted)
 	{
-		if (mpCompletedBy.size() < 1)
+		if (mpCompletedBy.empty()) //(mpCompletedBy.size() < 1)
 		{
 			if (player.GetMotivation() >= mMotivationalCost)
 			{
 				player.DeductMotivation(mMotivationalCost);
 				player.AddSuccess(mSuccessAchievement);
 				mpCompletedBy.push_back(&player);
+
+				player.AddCompleteAssessment(*this);
 
 				std::cout << player.GetName() << " completes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 			}
@@ -49,6 +51,7 @@ void Assessment::PlayerLands( CPlayer& player )
 				player.AddSuccess(mSuccessAchievement / 2);
 				mpCompletedBy.push_back(&player);
 
+				player.AddCompleteAssessment(*this);
 				mpCompletedBy[0]->AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 
 				std::cout << player.GetName() << " completes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;

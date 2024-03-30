@@ -12,6 +12,12 @@ CPlayer::CPlayer(std::string name, Board& board)
     
 }
 
+void CPlayer::AddCompleteAssessment(CSpace& assessment)
+{
+    mCompletedAssessments.push_back(&assessment);
+}
+
+
 int CPlayer::GetPlagiarismHearingIndex() const
 {
     return mpBoard.GetPlagiarismHearingIndex();

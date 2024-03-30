@@ -1,8 +1,8 @@
 #pragma once
-
-//#include "Board.h"
+#include "CSpace.h"
 
 #include <string>
+#include <vector>
 
 class Board;
 
@@ -15,6 +15,7 @@ private:
     int mSuccess;
     int mPosition;
     Board& mpBoard;
+public:std::vector<CSpace*> mCompletedAssessments;
 
 public:
     CPlayer(std::string name, Board& board);
@@ -35,6 +36,8 @@ public:
     void DeductMotivation(int motivation);
 
     void AddSuccess(int success);
+
+    void AddCompleteAssessment(CSpace& assessment);
 
 
     void UpdateYear();
