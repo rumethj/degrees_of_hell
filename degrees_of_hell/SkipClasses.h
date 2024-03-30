@@ -9,5 +9,6 @@ public:
     ~SkipClasses();
 
     void PlayerLands(CPlayer& player) override;
+
 };
 

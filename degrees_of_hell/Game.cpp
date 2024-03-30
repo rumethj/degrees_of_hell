@@ -9,8 +9,8 @@ int Game::Random()
 
 Game::Game(std::vector<std::string> players, std::string filePath, int rounds)
 {
-    InitialisePlayers(players);
     InitialiseBoard(filePath);
+    InitialisePlayers(players);
 
     mRounds = rounds;
     mCurrentRound = 1;
@@ -20,7 +20,7 @@ void Game::InitialisePlayers(std::vector<std::string> players)
 {
     for (int i = 0; i < players.size(); i++)
     {
-        mPlayers.push_back(new CPlayer(players[i]));
+        mPlayers.push_back(new CPlayer(players[i], *mpBoard));
     }
 }
 
@@ -32,6 +32,8 @@ void Game::InitialiseBoard(std::string filePath)
 void Game::EndGame()
 {
     std::cout << "Game Over" << std::endl;
+    std::cout << "=========" << std::endl;
+
     int mostSuccess = mPlayers[0]->GetSuccess();
 
     // Get the most amount of success

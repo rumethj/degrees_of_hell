@@ -1,13 +1,20 @@
 #include "CPlayer.h"
+#include "Board.h"
 
-CPlayer::CPlayer(std::string name) 
+CPlayer::CPlayer(std::string name, Board& board)
     : mName(name),
     mYear( 1 ),
     mMotivation( 1000 ),
     mSuccess( 0 ),
-    mPosition( 0 )
+    mPosition( 0 ),
+    mpBoard( board )
 {
     
+}
+
+int CPlayer::GetPlagiarismHearingIndex() const
+{
+    return mpBoard.GetPlagiarismHearingIndex();
 }
 
 std::string CPlayer::GetName() const

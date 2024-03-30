@@ -36,6 +36,12 @@
     <ClCompile Include="SkipClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlagiarismHearing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AccusedOfPlagiarism.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSpace.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SkipClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlagiarismHearing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AccusedOfPlagiarism.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

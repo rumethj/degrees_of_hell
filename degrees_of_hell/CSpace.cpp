@@ -1,4 +1,5 @@
 #include "CSpace.h"
+#include "CPlayer.h"
 
 CSpace::CSpace(int type, std::string name) 
     : mType( type ), 

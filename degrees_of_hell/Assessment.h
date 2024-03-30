@@ -5,6 +5,7 @@
 
 #include "CSpace.h"
 
+
 class Assessment : public CSpace
 {
 private:
@@ -19,5 +20,6 @@ public:
     ~Assessment();
 
     void PlayerLands(CPlayer& player) override;
+
 };
 

@@ -1,4 +1,8 @@
 #include "Board.h"
+#include "CPlayer.h"
+//#include "CSpace.h"
+
+
 
 #include <iostream>
 
@@ -23,6 +27,11 @@ int Board::GetSize() const
     return mBoard.size();
 }
 
+int Board::GetPlagiarismHearingIndex() const
+{
+    return mPlagiarismHearingIndex;
+}
+
 std::string Board::GetSpaceName(int spacePos) const
 {
     return mBoard[spacePos]->GetName();
@@ -30,6 +39,9 @@ std::string Board::GetSpaceName(int spacePos) const
 
 Board::Board(std::string setUpFilePath)
 {
+    mPlagiarismHearingIndex = 0;
+    mAccusedOfPlagiarismIndex = 0;
+
     std::ifstream inputFile(setUpFilePath); //"data/degrees.txt");
     if (!inputFile) {
         throw std::runtime_error("Unable to open file: " + setUpFilePath);
@@ -40,8 +52,9 @@ Board::Board(std::string setUpFilePath)
     while (std::getline(inputFile, line))
     {
         std::istringstream stringStream(line);
-        std::vector<std::string> tokens;
+        std::vector<std::string> tokens; 
         std::string token;
+
 
         // Populate token
         while (stringStream >> token)
@@ -95,14 +108,20 @@ Board::Board(std::string setUpFilePath)
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1] + " " + tokens[2];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new PlagiarismHearing(type, name));
+            
+            // Save index
+            mPlagiarismHearingIndex = mBoard.size() - 1;
         }
         else if (std::stoi(tokens[0]) == 7) // Accused of plagiarism
         {
             int type = std::stoi(tokens[0]);
             std::string name = tokens[1] + " " + tokens[2] + " " + tokens[3];
 
-            mBoard.push_back(new CSpace(type, name));
+            mBoard.push_back(new AccusedOfPlagiarism(type, name));
+
+            // Save index
+            mAccusedOfPlagiarismIndex = mBoard.size() - 1;
         }
         else if (std::stoi(tokens[0]) == 8) // Skip classes
         {
@@ -112,18 +131,8 @@ Board::Board(std::string setUpFilePath)
             mBoard.push_back(new SkipClasses(type, name));
         }
         
-        
-
-
-        //Print the tokens line
-        /*for (int i = 0; i < tokens.size(); i++)
-        {
-            std::cout << tokens[i];
-        }
-        std::cout << std::endl;*/
 
     }
-
 
 
     inputFile.close();

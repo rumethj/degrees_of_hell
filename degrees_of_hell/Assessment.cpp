@@ -1,4 +1,5 @@
 #include "Assessment.h"
+#include "CPlayer.h"
 
 Assessment::Assessment( int type,
 	std::string name,
@@ -35,7 +36,7 @@ void Assessment::PlayerLands( CPlayer& player )
 			{
 				player.DeductMotivation(mMotivationalCost);
 				player.AddSuccess(mSuccessAchievement);
-				mpCompletedBy.push_back(&player); // CHECK
+				mpCompletedBy.push_back(&player);
 
 				std::cout << player.GetName() << " completes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 			}
@@ -46,7 +47,9 @@ void Assessment::PlayerLands( CPlayer& player )
 			{
 				player.DeductMotivation(mMotivationalCost / 2);
 				player.AddSuccess(mSuccessAchievement / 2);
-				mpCompletedBy.push_back(&player); // CHECK
+				mpCompletedBy.push_back(&player);
+
+				mpCompletedBy[0]->AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 
 				std::cout << player.GetName() << " completes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
 				std::cout << mpCompletedBy[0]->GetName() << " helps and achieves " << mSuccessAchievement / 2 << std::endl;

@@ -1,9 +1,10 @@
 #pragma once
-#include "CPlayer.h"
+
 
 #include <string>
 #include <iostream>
 
+class CPlayer;
 
 class CSpace
 {
@@ -23,5 +24,6 @@ public:
      *The type of space will determine what action to take
     */
     virtual void PlayerLands( CPlayer& player );
+
 };
 

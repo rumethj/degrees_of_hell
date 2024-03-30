@@ -1,4 +1,6 @@
 #include "SkipClasses.h"
+#include "CPlayer.h"
+
 
 SkipClasses::SkipClasses(int type, std::string name)
 	: CSpace(type, name)

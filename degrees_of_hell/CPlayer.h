@@ -1,8 +1,10 @@
 #pragma once
 
+//#include "Board.h"
 
 #include <string>
 
+class Board;
 
 class CPlayer
 {
@@ -12,9 +14,10 @@ private:
     int mMotivation;
     int mSuccess;
     int mPosition;
+    Board& mpBoard;
 
 public:
-    CPlayer(std::string name);
+    CPlayer(std::string name, Board& board);
 
     ~CPlayer();
 
@@ -23,6 +26,7 @@ public:
     int GetMotivation() const;
     int GetSuccess() const;
     int GetYear() const;
+    int GetPlagiarismHearingIndex() const;
 
     void SetPosition(int pos);
 
