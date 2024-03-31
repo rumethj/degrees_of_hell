@@ -5,10 +5,13 @@ WelcomeWeek::WelcomeWeek(int type, std::string name)
 {
 }
 
+
 void WelcomeWeek::PlayerLands(CPlayer& player)
 {
-	// Player landing message
+	// Updating data
 	player.AddMotivation(250);
 	player.UpdateYear();
+
+	// Player landing message
 	std::cout << player.GetName() << " attends Welcome Week and starts year " << player.GetYear() << " more motivated!" << std::endl;
 }

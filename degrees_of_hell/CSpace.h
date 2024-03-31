@@ -7,7 +7,7 @@
 
 class CSpace
 {
-protected:
+private:
     int mType;
     std::string mName;
 
@@ -20,7 +20,7 @@ public:
      */
     CSpace( int type, std::string name );
 
-    ~CSpace();
+
 
     /**
      * @brief Gets the name of the space

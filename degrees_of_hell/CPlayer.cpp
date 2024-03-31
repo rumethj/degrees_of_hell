@@ -1,6 +1,7 @@
 #include "CPlayer.h"
 #include "Board.h"
 
+
 CPlayer::CPlayer(std::string name, Board& board)
     : mName(name),
     mYear( 1 ),
@@ -11,6 +12,7 @@ CPlayer::CPlayer(std::string name, Board& board)
 {
     
 }
+
 
 void CPlayer::AddCompleteAssessment( CSpace& assessment )
 {

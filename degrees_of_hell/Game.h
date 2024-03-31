@@ -26,7 +26,7 @@ public:
      * @param[in] filePath File path for setting up the board
      * @param[in] rounds Number of rounds to play
      */
-    Game(std::vector<std::string> players, std::string filePath, int rounds);
+    Game(std::vector<std::string> players, std::string boardFilePath, int rounds);
     ~Game();
 
     /**

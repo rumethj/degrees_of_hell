@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -20,7 +21,6 @@ public:
      */
     Spinner(std::string filePath);
 
-    ~Spinner();
 
     /**
      * @brief Generates a random number between 1 and 10

@@ -103,6 +103,8 @@
     <Text Include="degrees.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="seed.txt" />
+    <Text Include="seed.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

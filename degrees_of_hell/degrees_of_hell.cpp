@@ -1,9 +1,12 @@
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+
 #include <iostream>
 #include <vector>
 
 #include "Game.h"
 
-int main()
+void main()
 {
     std::vector<std::string> players;
     players.push_back("Vyvyan");
@@ -17,5 +20,7 @@ int main()
     degreesGame->StartGame();
     degreesGame->EndGame();
 
-    return 0;
+    delete degreesGame;
+
+    _CrtDumpMemoryLeaks();
 }

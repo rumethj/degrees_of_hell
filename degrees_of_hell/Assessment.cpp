@@ -15,35 +15,50 @@ Assessment::Assessment( int type,
 void Assessment::PlayerLands( CPlayer& player )
 {
 	// Player landing message
-	std::cout << player.GetName() << " lands on " << mName << std::endl;
+	std::cout << player.GetName() << " lands on " << GetName() << std::endl;
 	 
-	// CHECK if player has already done this assignment (store vector in player as well)
-	bool playerHasCompleted = false;
-	for (int i = 0; i < mCompletedBy.size(); i++)
+	
+	if (mCompletedBy.empty())
 	{
-		if (mCompletedBy[i] == &player)
+		if (player.GetMotivation() >= mMotivationalCost) // Checking for adequate motivation
 		{
-			playerHasCompleted = true;
-		}
-	}
-
-	if (!playerHasCompleted)
-	{
-		if (mCompletedBy.empty())
-		{
-			if (player.GetMotivation() >= mMotivationalCost)
-			{
-				Complete(player);
-			}
+			Complete(player);
 		}
 		else
 		{
-			if (player.GetMotivation() >= mMotivationalCost / 2)
+			std::cout << player.GetName() << " doesn't have the " << mMotivationalCost << " motivation to complete the " << GetName() << std::endl;
+		}
+	}
+	else
+	{
+		// Checking if current player has already completed the assessment
+		bool hasPlayerCompleted = false;
+		for (int i = 0; i < mCompletedBy.size(); i++)
+		{
+			if (mCompletedBy[i] == &player)
+			{
+				hasPlayerCompleted = true;
+			}
+		}
+
+		if (hasPlayerCompleted)
+		{
+			std::cout << player.GetName() << " has already completed the " << GetName() << std::endl;
+		}
+		else
+		{
+			if (player.GetMotivation() >= mMotivationalCost / 2) // Checking for adequate motivation
 			{
 				Complete(player, *mCompletedBy[0]);
 			}
+			else
+			{
+				std::cout << player.GetName() << " doesn't have the " << mMotivationalCost / 2 << " motivation to complete the " << GetName() << std::endl;
+			}
 		}
 	}
+	
+	
 }
 
 void Assessment::Complete(CPlayer& player)
@@ -54,7 +69,7 @@ void Assessment::Complete(CPlayer& player)
 
 	player.AddCompleteAssessment(*this);
 
-	std::cout << player.GetName() << " completes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
+	std::cout << player.GetName() << " completes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
 
 void Assessment::Complete(CPlayer& currentPlayer, CPlayer& completedPlayer)
@@ -66,6 +81,6 @@ void Assessment::Complete(CPlayer& currentPlayer, CPlayer& completedPlayer)
 	currentPlayer.AddCompleteAssessment(*this);
 	completedPlayer.AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 
-	std::cout << currentPlayer.GetName() << " completes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
+	std::cout << currentPlayer.GetName() << " completes " << GetName() << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
 	std::cout << completedPlayer.GetName() << " helps and achieves " << mSuccessAchievement / 2 << std::endl;
 }

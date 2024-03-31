@@ -1,10 +1,15 @@
 #include "Board.h"
 #include "CPlayer.h"
-//#include "CSpace.h"
 
-
-
-#include <iostream>
+Board::~Board()
+{
+    // Delete each space in board
+    for (int i = 0; i < mBoard.size(); i++)
+    {
+        delete mBoard[i];
+    }
+    
+}
 
 void Board::RunSpaceAction(CPlayer& player)
 {
@@ -45,6 +50,7 @@ Board::Board(std::string setUpFilePath, Spinner& spinner)
 
 void Board::CreateBoard(std::string setUpFilePath, Spinner& spinner)
 {
+    // Reading file
     std::ifstream inputFile(setUpFilePath);
     if (!inputFile) {
         throw std::runtime_error("Unable to open file: " + setUpFilePath);
@@ -52,6 +58,7 @@ void Board::CreateBoard(std::string setUpFilePath, Spinner& spinner)
 
     std::string line;
 
+    // Creating each space and pushing to board
     while (std::getline(inputFile, line))
     {
         std::istringstream stringStream(line);

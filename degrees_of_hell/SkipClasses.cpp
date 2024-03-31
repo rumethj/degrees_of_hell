@@ -6,8 +6,9 @@ SkipClasses::SkipClasses(int type, std::string name)
 {
 }
 
+
 void SkipClasses::PlayerLands(CPlayer& player)
 {
 	// Player landing message
-	std::cout << player.GetName() << " lands on " << mName << " and hangs out with their dodgy mates" << std::endl;
+	std::cout << player.GetName() << " lands on " << GetName() << " and hangs out with their dodgy mates" << std::endl;
 }

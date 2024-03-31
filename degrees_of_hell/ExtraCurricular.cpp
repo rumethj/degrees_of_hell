@@ -9,38 +9,53 @@ ExtraCurricular::ExtraCurricular(int type,
 {
 }
 
+
 void ExtraCurricular::PlayerLands(CPlayer& player)
 {
 	// Player landing message
-	std::cout << player.GetName() << " lands on " << mName << std::endl;
+	std::cout << player.GetName() << " lands on " << GetName() << std::endl;
 
-	// CHECK if player has already done this assignment (store vector in player as well)
-	bool playerHasCompleted = false;
-	for (int i = 0; i < mUndertakenBy.size(); i++)
-	{
-		if (mUndertakenBy[i] == &player) // CHECK
-		{
-			playerHasCompleted = true;
-		}
-	}
 
-	if (!playerHasCompleted)
+	if (mUndertakenBy.empty())
 	{
-		if (mUndertakenBy.empty())
+		if (player.GetMotivation() >= mMotivationalCost) // Checking for adequate motivation
 		{
-			if (player.GetMotivation() >= mMotivationalCost)
-			{
-				Undertake(player);
-			}
+			Undertake(player);
 		}
 		else
 		{
-			if (player.GetMotivation() >= mMotivationalCost / 2)
+			std::cout << player.GetName() << " doesn't have the " << mMotivationalCost << " motivation to undertake the activity " << GetName() << std::endl;
+		}
+	}
+	else
+	{
+		// Checking if current player has already completed the assessment
+		bool hasPlayerUndertaken = false;
+		for (int i = 0; i < mUndertakenBy.size(); i++)
+		{
+			if (mUndertakenBy[i] == &player)
+			{
+				hasPlayerUndertaken = true;
+			}
+		}
+
+		if (hasPlayerUndertaken)
+		{
+			std::cout << player.GetName() << " has already undertaken the activity " << GetName() << std::endl;
+		}
+		else
+		{
+			if (player.GetMotivation() >= mMotivationalCost / 2) // Checking for adequate motivation
 			{
 				Undertake(player, *mUndertakenBy[0]);
 			}
+			else
+			{
+				std::cout << player.GetName() << " doesn't have the " << mMotivationalCost / 2 << " motivation to undertake the activity " << GetName() << std::endl;
+			}
 		}
 	}
+
 }
 
 void ExtraCurricular::Undertake(CPlayer& player)
@@ -51,7 +66,7 @@ void ExtraCurricular::Undertake(CPlayer& player)
 
 	player.AddCompleteAssessment(*this);
 
-	std::cout << player.GetName() << " undertakes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
+	std::cout << player.GetName() << " undertakes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
 
 void ExtraCurricular::Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer)
@@ -64,6 +79,6 @@ void ExtraCurricular::Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer)
 	previousPlayer.AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 	previousPlayer.AddMotivation(mMotivationalCost / 2); // Success addition for previous completor
 
-	std::cout << currentPlayer.GetName() << " undertakes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
+	std::cout << currentPlayer.GetName() << " undertakes " << GetName() << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
 	std::cout << currentPlayer.GetName() << " motivates " << previousPlayer.GetName() << " by joining their activity" << std::endl;
 }

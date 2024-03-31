@@ -1,8 +1,10 @@
 #pragma once
+
 #include <sstream>
 #include <vector>
 #include <fstream>
 #include <string>
+#include <iostream>
 
 #include "Assessment.h"
 #include "WelcomeWeek.h"

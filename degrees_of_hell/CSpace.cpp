@@ -8,6 +8,7 @@ CSpace::CSpace(int type, std::string name)
 
 }
 
+
 std::string CSpace::GetName() const
 {
     return mName;
@@ -15,5 +16,6 @@ std::string CSpace::GetName() const
 
 void CSpace::PlayerLands(CPlayer& player)
 {
+    // Landing message
     std::cout << player.GetName() << " lands on " << mName << std::endl;
 }

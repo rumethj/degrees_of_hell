@@ -1,4 +1,5 @@
 #pragma once
+
 #include "CSpace.h"
 #include "Spinner.h"
 
@@ -17,7 +18,7 @@ public:
      */
     Bonus(int type, std::string name, Spinner& spinner);
 
-    ~Bonus();
+
 
     /**
      * @brief Handles actions when a player lands on the Bonus space

@@ -11,10 +11,10 @@ Bogus::Bogus(int type,
 void Bogus::PlayerLands(CPlayer& player)
 {
 	// Player landing message
-	std::cout << player.GetName() << " lands on " << mName << std::endl;
+	std::cout << player.GetName() << " lands on " << GetName() << std::endl;
 
-	int bonusSpin = mSpinner.GetRandom();
-
+	// Spinning again
+	int bonusSpin = mSpinner.GetSpin(player);
 	switch (bonusSpin)
 	{
 	case 1:

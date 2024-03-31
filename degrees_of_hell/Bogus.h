@@ -1,4 +1,6 @@
 #pragma once
+
+
 #include "CSpace.h"
 #include "Spinner.h"
 
@@ -19,7 +21,7 @@ public:
      */
     Bogus(int type, std::string name, Spinner& spinner);
 
-    ~Bogus();
+
 
     /**
      * @brief Handles actions when a player lands on the Bogus space

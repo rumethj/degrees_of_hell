@@ -20,8 +20,6 @@ public:
      */
     ExtraCurricular(int type, std::string name, int motivationalCost);
 
-    ~ExtraCurricular();
-
     /**
      * @brief Handles actions when a player lands on the extracurricular activity space
      * 

@@ -28,8 +28,6 @@ public:
      */
     CPlayer(std::string name, Board& board);
 
-    ~CPlayer();
-
     /**
      * @brief Retrieves the name of the player
      *

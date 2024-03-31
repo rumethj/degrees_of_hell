@@ -26,7 +26,6 @@ public:
      */
     Assessment(int type,std::string name,int motivationalCost,int successAchievement,int year);
 
-    ~Assessment();
 
     /**
      * @brief Handles actions when a player lands on the assessment space
