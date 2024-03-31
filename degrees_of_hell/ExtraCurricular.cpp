@@ -28,7 +28,7 @@ void ExtraCurricular::PlayerLands(CPlayer& player)
 	{
 		if (player.GetMotivation() >= mMotivationalCost) // Checking for adequate motivation
 		{
-			Undertake(player);
+			UndertakeActivity(player);
 		}
 		else
 		{
@@ -55,7 +55,7 @@ void ExtraCurricular::PlayerLands(CPlayer& player)
 		{
 			if (player.GetMotivation() >= mMotivationalCost / 2) // Checking for adequate motivation
 			{
-				Undertake(player, *mUndertakenBy[0]);
+				UndertakeActivity(player, *mUndertakenBy[0]);
 			}
 			else
 			{
@@ -66,7 +66,7 @@ void ExtraCurricular::PlayerLands(CPlayer& player)
 
 }
 
-void ExtraCurricular::Undertake(CPlayer& player)
+void ExtraCurricular::UndertakeActivity(CPlayer& player)
 {
 	player.DeductMotivation(mMotivationalCost);
 	player.AddSuccess(mSuccessAchievement);
@@ -76,7 +76,7 @@ void ExtraCurricular::Undertake(CPlayer& player)
 	std::cout << player.GetName() << " undertakes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
 
-void ExtraCurricular::Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer)
+void ExtraCurricular::UndertakeActivity(CPlayer& currentPlayer, CPlayer& previousPlayer)
 {
 	currentPlayer.DeductMotivation(mMotivationalCost / 2);
 	currentPlayer.AddSuccess(mSuccessAchievement / 2);

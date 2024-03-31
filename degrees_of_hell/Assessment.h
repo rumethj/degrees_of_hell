@@ -35,6 +35,7 @@ public:
      */
     void PlayerLands(CPlayer& player) override;
 
+private:
     /**
      * @brief Completes the assessment for a player
      *
@@ -42,7 +43,7 @@ public:
      *
      * @param[in] player The player completing the assessment
      */
-    void Complete(CPlayer& player);
+    void CompleteAssessment(CPlayer& player);
 
     /**
      * @brief Completes the assessment for a player with help from a previous completer
@@ -54,6 +55,6 @@ public:
      * @param[in] currentPlayer The current player completing the assessment
      * @param[in] completedPlayer The player who previously completed the assessment
      */
-    void Complete(CPlayer& currentPlayer, CPlayer& completedPlayer);
+    void CompleteAssessment(CPlayer& currentPlayer, CPlayer& completedPlayer);
 };
 

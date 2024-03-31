@@ -31,6 +31,7 @@ public:
      */
     void PlayerLands(CPlayer& player) override;
 
+private: 
     /**
      * @brief Undertakes the extracurricular activity for a player
      *
@@ -38,7 +39,7 @@ public:
      *
      * @param[in] player The player undertaking the activity
      */
-    void Undertake(CPlayer& player);
+    void UndertakeActivity(CPlayer& player);
 
     /**
      * @brief Undertakes the extracurricular activity for a player with help from a previous participant
@@ -51,7 +52,7 @@ public:
      * @param[in] currentPlayer The current player undertaking the activity
      * @param[in] previousPlayer The player who previously undertook the activity
      */
-    void Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer);
+    void UndertakeActivity(CPlayer& currentPlayer, CPlayer& previousPlayer);
 
 
 };

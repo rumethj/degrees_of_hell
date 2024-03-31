@@ -30,7 +30,7 @@ void Assessment::PlayerLands( CPlayer& player )
 	{
 		if (player.GetMotivation() >= mMotivationalCost) // Checking for adequate motivation
 		{
-			Complete(player);
+			CompleteAssessment(player);
 		}
 		else
 		{
@@ -57,7 +57,7 @@ void Assessment::PlayerLands( CPlayer& player )
 		{
 			if (player.GetMotivation() >= mMotivationalCost / 2) // Checking for adequate motivation
 			{
-				Complete(player, *mCompletedBy[0]);
+				CompleteAssessment(player, *mCompletedBy[0]);
 			}
 			else
 			{
@@ -69,7 +69,7 @@ void Assessment::PlayerLands( CPlayer& player )
 	
 }
 
-void Assessment::Complete(CPlayer& player)
+void Assessment::CompleteAssessment(CPlayer& player)
 {
 	player.DeductMotivation(mMotivationalCost);
 	player.AddSuccess(mSuccessAchievement);
@@ -80,7 +80,7 @@ void Assessment::Complete(CPlayer& player)
 	std::cout << player.GetName() << " completes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
 
-void Assessment::Complete(CPlayer& currentPlayer, CPlayer& completedPlayer)
+void Assessment::CompleteAssessment(CPlayer& currentPlayer, CPlayer& completedPlayer)
 {
 	currentPlayer.DeductMotivation(mMotivationalCost / 2);
 	currentPlayer.AddSuccess(mSuccessAchievement / 2);
