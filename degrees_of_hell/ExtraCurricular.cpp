@@ -9,6 +9,14 @@ ExtraCurricular::ExtraCurricular(int type,
 {
 }
 
+ExtraCurricular::~ExtraCurricular()
+{
+	for (int i = 0; i < mUndertakenBy.size(); i++)
+	{
+		delete mUndertakenBy[i];
+	}
+}
+
 
 void ExtraCurricular::PlayerLands(CPlayer& player)
 {
@@ -64,7 +72,6 @@ void ExtraCurricular::Undertake(CPlayer& player)
 	player.AddSuccess(mSuccessAchievement);
 	mUndertakenBy.push_back(&player);
 
-	player.AddCompleteAssessment(*this);
 
 	std::cout << player.GetName() << " undertakes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
@@ -75,7 +82,6 @@ void ExtraCurricular::Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer)
 	currentPlayer.AddSuccess(mSuccessAchievement / 2);
 	mUndertakenBy.push_back(&currentPlayer);
 
-	currentPlayer.AddCompleteAssessment(*this);
 	previousPlayer.AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 	previousPlayer.AddMotivation(mMotivationalCost / 2); // Success addition for previous completor
 

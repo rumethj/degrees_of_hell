@@ -14,7 +14,7 @@ public:
      */
     PlagiarismHearing(int type, std::string name);
 
-
+    ~PlagiarismHearing();
 
     /**
      * @brief Handles actions when a player lands on the plagiarism hearing space

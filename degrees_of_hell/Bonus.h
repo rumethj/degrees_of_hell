@@ -18,6 +18,7 @@ public:
      */
     Bonus(int type, std::string name, Spinner& spinner);
 
+    ~Bonus();
 
 
     /**

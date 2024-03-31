@@ -6,6 +6,8 @@ PlagiarismHearing::PlagiarismHearing(int type, std::string name)
 }
 
 
+
+
 void PlagiarismHearing::PlayerLands(CPlayer& player)
 {
 	// Player landing message

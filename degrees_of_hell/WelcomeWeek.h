@@ -13,6 +13,7 @@ public:
      */
     WelcomeWeek(int type, std::string name);
 
+    ~WelcomeWeek();
 
     /**
      * @brief Handles actions when a player lands on the Welcome Week space

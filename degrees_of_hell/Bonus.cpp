@@ -8,6 +8,9 @@ Bonus::Bonus(int type,
 {
 }
 
+
+
+
 void Bonus::PlayerLands(CPlayer& player)
 {
 	// Player landing message

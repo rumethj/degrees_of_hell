@@ -7,7 +7,6 @@ Spinner::Spinner(std::string filePath)
     if (seedFile) 
     {
         seedFile >> mSeed; // Read the seed value from the file
-        seedFile.close(); // Close the file
     }
     else 
     {

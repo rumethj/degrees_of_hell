@@ -20,8 +20,6 @@ public:
      */
     CSpace( int type, std::string name );
 
-
-
     /**
      * @brief Gets the name of the space
      *

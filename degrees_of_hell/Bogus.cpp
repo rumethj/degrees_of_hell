@@ -8,6 +8,7 @@ Bogus::Bogus(int type,
 {
 }
 
+
 void Bogus::PlayerLands(CPlayer& player)
 {
 	// Player landing message

@@ -8,7 +8,6 @@ CSpace::CSpace(int type, std::string name)
 
 }
 
-
 std::string CSpace::GetName() const
 {
     return mName;

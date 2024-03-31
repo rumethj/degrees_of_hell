@@ -7,6 +7,7 @@ SkipClasses::SkipClasses(int type, std::string name)
 }
 
 
+
 void SkipClasses::PlayerLands(CPlayer& player)
 {
 	// Player landing message

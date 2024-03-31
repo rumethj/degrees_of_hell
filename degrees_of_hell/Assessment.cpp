@@ -12,6 +12,14 @@ Assessment::Assessment( int type,
 {
 }
 
+Assessment::~Assessment()
+{
+	for (int i = 0; i < mCompletedBy.size(); i++)
+	{
+		delete mCompletedBy[i];
+	}
+}
+
 void Assessment::PlayerLands( CPlayer& player )
 {
 	// Player landing message
@@ -67,7 +75,7 @@ void Assessment::Complete(CPlayer& player)
 	player.AddSuccess(mSuccessAchievement);
 	mCompletedBy.push_back(&player);
 
-	player.AddCompleteAssessment(*this);
+	player.AddCompleteAssessment(this);
 
 	std::cout << player.GetName() << " completes " << GetName() << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
 }
@@ -78,7 +86,7 @@ void Assessment::Complete(CPlayer& currentPlayer, CPlayer& completedPlayer)
 	currentPlayer.AddSuccess(mSuccessAchievement / 2);
 	mCompletedBy.push_back(&currentPlayer);
 
-	currentPlayer.AddCompleteAssessment(*this);
+	currentPlayer.AddCompleteAssessment(this);
 	completedPlayer.AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
 
 	std::cout << currentPlayer.GetName() << " completes " << GetName() << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;

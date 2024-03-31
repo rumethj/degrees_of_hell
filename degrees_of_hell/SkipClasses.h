@@ -14,6 +14,7 @@ public:
      */
     SkipClasses(int type, std::string name);
 
+    ~SkipClasses();
 
     /**
      * @brief Handles actions when a player lands on the skip classes space

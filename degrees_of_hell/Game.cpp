@@ -1,7 +1,4 @@
-
-
 #include "Game.h"
-
 
 Game::~Game()
 {
@@ -86,6 +83,7 @@ void Game::StartGame()
         // Player turn
         for (int j = 0; j < mPlayers.size(); j++)
         {
+            
             int playerSpin = mpSpinner->GetSpin(*mPlayers[j]); // Spin
 
             int newPlayerPosition = mPlayers[j]->GetPosition() + playerSpin;

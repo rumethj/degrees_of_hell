@@ -21,7 +21,7 @@ public:
      */
     AccusedOfPlagiarism(int type, std::string name);
 
-
+    ~AccusedOfPlagiarism();
 
 
     /**

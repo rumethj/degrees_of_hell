@@ -4,7 +4,7 @@
 #include <vector>
 
 class Board;
-class CSpace;
+class Assessment;
 
 class CPlayer
 {
@@ -15,9 +15,10 @@ private:
     int mSuccess;
     int mPosition;
     Board& mpBoard;
-    std::vector<CSpace*> mCompletedAssessments;
+    std::vector<Assessment*> mCompletedAssessments;
 
 public:
+
     /**
      * @brief Constructor for CPlayer class
      *
@@ -104,7 +105,7 @@ public:
      *
      * @param[in] assessment Reference to the completed assessment
      */
-    void AddCompleteAssessment(CSpace& assessment);
+    void AddCompleteAssessment(Assessment* assessment);
 
     /**
      * @brief Updates the year player is in
