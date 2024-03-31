@@ -6,10 +6,10 @@ Bogus::Bogus(int type,
 	: CSpace(type, name),
 	mSpinner(spinner)
 {
-	InitialiseBogusMessages();
+	InitialiseBogusData();
 }
 
-void Bogus::InitialiseBogusMessages() 
+void Bogus::InitialiseBogusData() 
 {
 	// Initialize map with bonus spin messages and deduction values
 	mBogusData[1] = std::make_pair("Fall asleep in a boring lecture. Lose motivation of 20", 20 );

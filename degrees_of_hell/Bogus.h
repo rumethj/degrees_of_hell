@@ -40,5 +40,5 @@ private:
      *
      * Populates the bogus data map with spin messages and corresponding motivation costs.
      */
-    void InitialiseBogusMessages();
+    void InitialiseBogusData();
 };

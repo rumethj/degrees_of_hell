@@ -22,12 +22,7 @@ public:
     Spinner(std::string filePath);
 
 
-    /**
-     * @brief Generates a random number between 1 and 10
-     *
-     * @return A random integer between 1 and 10
-     */
-    int GetRandom() const;
+
 
     /**
      * @brief Simulates a spin for a player and returns the result
@@ -38,5 +33,13 @@ public:
      * @return The spin result (a random integer between 1 and 10)
      */
     int GetSpin(CPlayer& player) const;
+
+private:
+    /**
+     * @brief Generates a random number between 1 and 10
+     *
+     * @return A random integer between 1 and 10
+     */
+    int GetRandom() const;
 };
 

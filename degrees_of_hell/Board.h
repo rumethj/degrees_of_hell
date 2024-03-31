@@ -42,15 +42,7 @@ public:
 
     ~Board();
 
-    /**
-     * @brief Creates the game board based on the setup file
-     *
-     * Reads the setup file, creates different types of spaces, and populates the game board.
-     *
-     * @param[in] setUpFilePath The file path for setting up the board
-     * @param[in] spinner Reference to the spinner object
-     */
-    void CreateBoard(std::string setUpFilePath, Spinner& spinner);
+
 
     /**
      * @brief Retrieves the size of the board
@@ -88,4 +80,15 @@ public:
      * @param[in] player Reference to the player landing on a space
      */
     void RunSpaceAction( CPlayer& player );
+
+private:
+    /**
+     * @brief Creates the game board based on the setup file
+     *
+     * Reads the setup file, creates different types of spaces, and populates the game board.
+     *
+     * @param[in] setUpFilePath The file path for setting up the board
+     * @param[in] spinner Reference to the spinner object
+     */
+    void CreateBoard(std::string setUpFilePath, Spinner& spinner);
 };
