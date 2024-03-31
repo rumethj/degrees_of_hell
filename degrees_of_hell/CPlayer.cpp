@@ -10,7 +10,6 @@ CPlayer::CPlayer(std::string name, Board& board)
     mPosition( 0 ),
     mpBoard( board )
 {
-    
 }
 
 void CPlayer::AddCompleteAssessment( Assessment* assessment )
@@ -19,9 +18,9 @@ void CPlayer::AddCompleteAssessment( Assessment* assessment )
 }
 
 
-int CPlayer::GetPlagiarismHearingIndex() const
+int CPlayer::GetSpaceIndex(int type) const
 {
-    return mpBoard.GetPlagiarismHearingIndex();
+    return mpBoard.GetSpaceIndex(type);
 }
 
 std::string CPlayer::GetName() const

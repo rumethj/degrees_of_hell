@@ -66,11 +66,11 @@ public:
     int GetYear() const;
 
     /**
-     * @brief Retrieves the plagiarism hearing index from the board
+     * @brief Retrieves the specified space index from the board
      *
-     * @return The plagiarism hearing index
+     * @return index of the space required
      */
-    int GetPlagiarismHearingIndex() const;
+    int GetSpaceIndex(int type) const;
 
     /**
      * @brief Sets the position of the player on the board

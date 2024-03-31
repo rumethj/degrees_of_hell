@@ -10,7 +10,7 @@ AccusedOfPlagiarism::AccusedOfPlagiarism(int type, std::string name)
 void AccusedOfPlagiarism::PlayerLands(CPlayer& player)
 {
 	// Moving player to plagiarism hearing and deducting motivation
-	player.SetPosition(player.GetPlagiarismHearingIndex());
+	player.SetPosition(player.GetSpaceIndex(mkPlagiarismHearingIndex));
 	player.DeductMotivation(mMotivationCost);
 
 

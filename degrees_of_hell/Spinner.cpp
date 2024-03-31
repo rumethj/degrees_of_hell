@@ -24,13 +24,13 @@ Spinner::Spinner(std::string filePath)
     seedFile.close();
 }
 
-int Spinner::GetRandom()
+int Spinner::GetRandom() const
 {
     //get a random number between 1 and 10
     return static_cast<int>(static_cast<double>(rand()) / (RAND_MAX + 1) * 10.0f + 1);
 }
 
-int Spinner::GetSpin(CPlayer& player)
+int Spinner::GetSpin(CPlayer& player) const
 {
     int playerSpin = GetRandom(); // Get number
     std::cout << player.GetName() << " spins " << playerSpin << std::endl; // Spin message

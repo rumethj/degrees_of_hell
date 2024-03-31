@@ -28,6 +28,13 @@ public:
     std::string GetName() const;
 
     /**
+     * @brief Gets the type of the space
+     *
+     * @return mType The type of the space
+     */
+    int GetType() const;
+
+    /**
      * @brief Handles actions when a player lands on the space
      *
      * Executes actions related to a player landing on the space.
@@ -35,7 +42,7 @@ public:
      *
      * @param[in] player The player landing on the space
      */
-    virtual void PlayerLands( CPlayer& player );
+    virtual void PlayerLands( CPlayer& player ) = 0;
 
 };
 

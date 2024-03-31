@@ -27,7 +27,7 @@ public:
      *
      * @return A random integer between 1 and 10
      */
-    int GetRandom();
+    int GetRandom() const;
 
     /**
      * @brief Simulates a spin for a player and returns the result
@@ -37,6 +37,6 @@ public:
      * @param[in] player The player spinning the spinner
      * @return The spin result (a random integer between 1 and 10)
      */
-    int GetSpin(CPlayer& player);
+    int GetSpin(CPlayer& player) const;
 };
 

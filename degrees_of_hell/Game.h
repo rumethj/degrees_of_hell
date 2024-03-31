@@ -41,6 +41,7 @@ public:
      */
     void EndGame();
 
+private:
     /**
      * @brief Initialises players for the game
      *

@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 
 
 #include "CSpace.h"
@@ -8,6 +9,7 @@ class Bogus : public CSpace
 {
 private:
     Spinner& mSpinner;
+    std::map<int, std::pair<std::string, int>> mBogusData;
 
 public:
     /**
@@ -32,4 +34,11 @@ public:
      */
     void PlayerLands(CPlayer& player) override;
 
+private:
+    /**
+     * @brief Initialises the bogus data map with spin messages and motivation costs
+     *
+     * Populates the bogus data map with spin messages and corresponding motivation costs.
+     */
+    void InitialiseBogusMessages();
 };

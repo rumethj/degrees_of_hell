@@ -13,6 +13,11 @@ std::string CSpace::GetName() const
     return mName;
 }
 
+int CSpace::GetType() const
+{
+    return mType;
+}
+
 void CSpace::PlayerLands(CPlayer& player)
 {
     // Landing message

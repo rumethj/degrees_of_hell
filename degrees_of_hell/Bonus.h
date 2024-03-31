@@ -1,4 +1,5 @@
 #pragma once
+#include <map>
 
 #include "CSpace.h"
 #include "Spinner.h"
@@ -7,6 +8,7 @@ class Bonus : public CSpace
 {
 private:
     Spinner& mSpinner;
+    std::map<int, std::pair<std::string, int>> mBonusData;
 
 public:
     /**
@@ -29,6 +31,14 @@ public:
      * @param[in] player The player landing on the Bonus space
      */
     void PlayerLands(CPlayer& player) override;
+
+private:
+    /**
+     * @brief Initialises the bonus data map with spin messages and motivation gains
+     *
+     * Populates the bonus data map with spin messages and corresponding motivation gains.
+     */
+    void InitialiseBonusData();
 
 };
 

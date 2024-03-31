@@ -1,7 +1,8 @@
 #include "WelcomeWeek.h"
 
 WelcomeWeek::WelcomeWeek(int type, std::string name)
-	: CSpace(type, name)
+	: CSpace(type, name),
+	mMotivationGain(250)
 {
 }
 
@@ -9,7 +10,7 @@ WelcomeWeek::WelcomeWeek(int type, std::string name)
 void WelcomeWeek::PlayerLands(CPlayer& player)
 {
 	// Updating data
-	player.AddMotivation(250);
+	player.AddMotivation(mMotivationGain);
 	player.UpdateYear();
 
 	// Player landing message

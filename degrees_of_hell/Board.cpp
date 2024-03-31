@@ -16,7 +16,7 @@ void Board::RunSpaceAction(CPlayer& player)
     mBoard[ player.GetPosition() ]->PlayerLands(player);
 }
 
-void Board::ShowBoard()
+void Board::ShowBoard() const
 {
     for (int i = 0; i < mBoard.size(); i++)
     {
@@ -29,9 +29,19 @@ int Board::GetSize() const
     return mBoard.size();
 }
 
-int Board::GetPlagiarismHearingIndex() const
+int Board::GetSpaceIndex(int type) const
 {
-    return mPlagiarismHearingIndex;
+    int index = 0;
+    for (int i = 0; i < GetSize(); i++)
+    {
+        if (mBoard[i]->GetType() == type)
+        {
+            index = i;
+            break;
+        }
+    }
+
+    return index;
 }
 
 std::string Board::GetSpaceName(int spacePos) const

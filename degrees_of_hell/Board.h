@@ -59,12 +59,14 @@ public:
      */
     int GetSize() const;
 
-    /**
-     * @brief Retrieves the index where Plagiarism Hearing Space is stored in the container
-     *
-     * @return The index of the plagiarism hearing space
-     */
-    int GetPlagiarismHearingIndex() const;
+
+     /**
+      * @brief Retrieves the index of the first space with the specified type
+      *
+      * @param[in] type The type of space to search for
+      * @return The index of the first space with the specified type
+      */
+    int GetSpaceIndex(int type) const;
 
 
     /**
@@ -78,7 +80,7 @@ public:
     /**
      * @brief Displays the names of all spaces on the board
      */
-    void ShowBoard();
+    void ShowBoard() const;
 
     /**
      * @brief Executes the action associated with the space where the player lands

@@ -3,6 +3,8 @@
 #include "CSpace.h"
 class WelcomeWeek : public CSpace
 {
+private:
+    int mMotivationGain;
 
 public:
     /**

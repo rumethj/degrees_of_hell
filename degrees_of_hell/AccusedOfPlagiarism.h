@@ -10,6 +10,7 @@ class AccusedOfPlagiarism :public CSpace
 {
 private:
     int mMotivationCost;
+    const int mkPlagiarismHearingIndex = 6;
 
 public:
 
