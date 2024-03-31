@@ -59,6 +59,5 @@ void Bonus::PlayerLands(CPlayer& player)
 		break;
 	}
 
-	// CHECK if MESSAGE needed - according assignment brief yes
-	//std::cout << player.GetName() << " has " << player.GetMotivation() << std::endl;
+	std::cout << player.GetName() << " has " << player.GetMotivation() << std::endl;
 }

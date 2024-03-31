@@ -4,9 +4,6 @@
 #include <fstream>
 #include <string>
 
-//#include "CSpace.h"
-
-// CHECK include these in header or cpp????
 #include "Assessment.h"
 #include "WelcomeWeek.h"
 #include "SkipClasses.h"
@@ -15,7 +12,6 @@
 #include "ExtraCurricular.h"
 #include "Bogus.h"
 #include "Bonus.h"
-
 
 #include "Spinner.h"
 
@@ -32,16 +28,60 @@ private:
     int mAccusedOfPlagiarismIndex;
 
 public:
+    /**
+     * @brief Constructor for Board class
+     *
+     * Initializes member variables of the Board class and creates the game board.
+     *
+     * @param[in] setUpFilePath The file path for setting up the board
+     * @param[in] spinner Reference to the spinner object
+     */
     Board(std::string setUpFilePath, Spinner& spinner);
 
     ~Board();
 
+    /**
+     * @brief Creates the game board based on the setup file
+     *
+     * Reads the setup file, creates different types of spaces, and populates the game board.
+     *
+     * @param[in] setUpFilePath The file path for setting up the board
+     * @param[in] spinner Reference to the spinner object
+     */
+    void CreateBoard(std::string setUpFilePath, Spinner& spinner);
+
+    /**
+     * @brief Retrieves the size of the board
+     *
+     * @return The size of the board
+     */
     int GetSize() const;
+
+    /**
+     * @brief Retrieves the index where Plagiarism Hearing Space is stored in the container
+     *
+     * @return The index of the plagiarism hearing space
+     */
     int GetPlagiarismHearingIndex() const;
 
+
+    /**
+     * @brief Retrieves the name of the space at the given position
+     *
+     * @param[in] spacePos The position of the space
+     * @return The name of the space at the specified position
+     */
     std::string GetSpaceName(int spacePos) const;
 
+    /**
+     * @brief Displays the names of all spaces on the board
+     */
     void ShowBoard();
 
+    /**
+     * @brief Executes the action associated with the space where the player lands
+     *
+     * @param[in] player Reference to the player landing on a space
+     */
     void RunSpaceAction( CPlayer& player );
 };

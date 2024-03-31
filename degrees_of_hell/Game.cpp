@@ -67,8 +67,7 @@ void Game::StartGame()
         std::cout << "=========" << std::endl;
         for (int j = 0; j < mPlayers.size(); j++)
         {
-            int playerSpin = mpSpinner->GetRandom();
-            std::cout << mPlayers[j]->GetName() << " spins " << playerSpin << std::endl;
+            int playerSpin = mpSpinner->GetSpin(*mPlayers[j]);
 
             int newPlayerPosition = mPlayers[j]->GetPosition() + playerSpin;
             mPlayers[j]->SetPosition(newPlayerPosition % mpBoard->GetSize());

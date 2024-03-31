@@ -13,13 +13,10 @@ void Board::RunSpaceAction(CPlayer& player)
 
 void Board::ShowBoard()
 {
-    /*for (int i = 0; i < mBoard.size(); i++)
+    for (int i = 0; i < mBoard.size(); i++)
     {
         std::cout << mBoard[i]->GetName()<< std::endl;
-    }*/
-    
-    std::cout << "This is " << mBoard[3]->GetName() << std::endl;
-    
+    }
 }
 
 int Board::GetSize() const
@@ -37,12 +34,18 @@ std::string Board::GetSpaceName(int spacePos) const
     return mBoard[spacePos]->GetName();
 }
 
+
 Board::Board(std::string setUpFilePath, Spinner& spinner)
     :mSpinner(spinner),
     mPlagiarismHearingIndex(0),
     mAccusedOfPlagiarismIndex(0)
 {
-    std::ifstream inputFile(setUpFilePath); //"data/degrees.txt")
+    CreateBoard(setUpFilePath, mSpinner);
+}
+
+void Board::CreateBoard(std::string setUpFilePath, Spinner& spinner)
+{
+    std::ifstream inputFile(setUpFilePath);
     if (!inputFile) {
         throw std::runtime_error("Unable to open file: " + setUpFilePath);
     }
@@ -52,9 +55,8 @@ Board::Board(std::string setUpFilePath, Spinner& spinner)
     while (std::getline(inputFile, line))
     {
         std::istringstream stringStream(line);
-        std::vector<std::string> tokens; 
+        std::vector<std::string> tokens;
         std::string token;
-
 
         // Populate token
         while (stringStream >> token)
@@ -108,7 +110,7 @@ Board::Board(std::string setUpFilePath, Spinner& spinner)
             std::string name = tokens[1] + " " + tokens[2];
 
             mBoard.push_back(new PlagiarismHearing(type, name));
-            
+
             // Save index
             mPlagiarismHearingIndex = mBoard.size() - 1;
         }
@@ -129,7 +131,7 @@ Board::Board(std::string setUpFilePath, Spinner& spinner)
 
             mBoard.push_back(new SkipClasses(type, name));
         }
-        
+
 
     }
 

@@ -27,3 +27,11 @@ int Spinner::GetRandom()
 {
     return static_cast<int>(static_cast<double>(rand()) / (RAND_MAX + 1) * 10.0f + 1);
 }
+
+int Spinner::GetSpin(CPlayer& player)
+{
+    int playerSpin = GetRandom();
+    std::cout << player.GetName() << " spins " << playerSpin << std::endl;
+
+    return playerSpin;
+}

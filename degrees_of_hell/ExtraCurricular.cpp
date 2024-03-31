@@ -30,30 +30,40 @@ void ExtraCurricular::PlayerLands(CPlayer& player)
 		{
 			if (player.GetMotivation() >= mMotivationalCost)
 			{
-				player.DeductMotivation(mMotivationalCost);
-				player.AddSuccess(mSuccessAchievement);
-				mUndertakenBy.push_back(&player);
-
-				player.AddCompleteAssessment(*this);
-
-				std::cout << player.GetName() << " undertakes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
+				Undertake(player);
 			}
 		}
 		else
 		{
 			if (player.GetMotivation() >= mMotivationalCost / 2)
 			{
-				player.DeductMotivation(mMotivationalCost / 2);
-				player.AddSuccess(mSuccessAchievement / 2);
-				mUndertakenBy.push_back(&player);
-
-				player.AddCompleteAssessment(*this);
-				mUndertakenBy[0]->AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
-				mUndertakenBy[0]->AddMotivation(mMotivationalCost / 2); // Success addition for previous completor
-
-				std::cout << player.GetName() << " undertakes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
-				std::cout << player.GetName() << " motivates " << mUndertakenBy[0]->GetName() << " by joining their activity" << std::endl;
+				Undertake(player, *mUndertakenBy[0]);
 			}
 		}
 	}
+}
+
+void ExtraCurricular::Undertake(CPlayer& player)
+{
+	player.DeductMotivation(mMotivationalCost);
+	player.AddSuccess(mSuccessAchievement);
+	mUndertakenBy.push_back(&player);
+
+	player.AddCompleteAssessment(*this);
+
+	std::cout << player.GetName() << " undertakes " << mName << " for " << mMotivationalCost << " and achieves " << mSuccessAchievement << std::endl;
+}
+
+void ExtraCurricular::Undertake(CPlayer& currentPlayer, CPlayer& previousPlayer)
+{
+	currentPlayer.DeductMotivation(mMotivationalCost / 2);
+	currentPlayer.AddSuccess(mSuccessAchievement / 2);
+	mUndertakenBy.push_back(&currentPlayer);
+
+	currentPlayer.AddCompleteAssessment(*this);
+	previousPlayer.AddSuccess(mSuccessAchievement / 2); // Success addition for previous completor
+	previousPlayer.AddMotivation(mMotivationalCost / 2); // Success addition for previous completor
+
+	std::cout << currentPlayer.GetName() << " undertakes " << mName << " for " << mMotivationalCost / 2 << " and achieves " << mSuccessAchievement / 2 << std::endl;
+	std::cout << currentPlayer.GetName() << " motivates " << previousPlayer.GetName() << " by joining their activity" << std::endl;
 }

@@ -12,9 +12,9 @@ CPlayer::CPlayer(std::string name, Board& board)
     
 }
 
-void CPlayer::AddCompleteAssessment(CSpace& assessment)
+void CPlayer::AddCompleteAssessment( CSpace& assessment )
 {
-    mCompletedAssessments.push_back(&assessment);
+    mCompletedAssessments.push_back( &assessment );
 }
 
 
