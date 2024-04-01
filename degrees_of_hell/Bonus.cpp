@@ -9,6 +9,11 @@ Bonus::Bonus(int type,
 	InitialiseBonusData();
 }
 
+Bonus::~Bonus()
+{
+	delete &mBonusData;
+}
+
 void Bonus::InitialiseBonusData() {
 	// Initialize map with bonus spin messages and motivation gains
 	mBonusData[1] = std::make_pair("Recieve some useful feedback. Gain motivation of 20", 20);

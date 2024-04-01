@@ -26,6 +26,10 @@ public:
      */
     Assessment(int type,std::string name,int motivationalCost,int successAchievement,int year);
 
+    /**
+     * @brief Destructor for Assessment class
+     *
+     */
     ~Assessment();
 
     /**

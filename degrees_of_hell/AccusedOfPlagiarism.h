@@ -22,8 +22,6 @@ public:
      */
     AccusedOfPlagiarism(int type, std::string name);
 
-    ~AccusedOfPlagiarism();
-
 
     /**
      * @brief Handles actions when a player lands on the AccusedOfPlagiarism space

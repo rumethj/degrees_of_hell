@@ -9,6 +9,11 @@ Bogus::Bogus(int type,
 	InitialiseBogusData();
 }
 
+Bogus::~Bogus()
+{
+	delete &mBogusData;
+}
+
 void Bogus::InitialiseBogusData() 
 {
 	// Initialize map with bonus spin messages and deduction values

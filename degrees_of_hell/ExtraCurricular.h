@@ -20,6 +20,11 @@ public:
      */
     ExtraCurricular(int type, std::string name, int motivationalCost);
 
+    /**
+     * @brief Destructor for ExtraCurricular class
+     *
+     * Delets all memory allocations in object
+     */
     ~ExtraCurricular();
 
     /**

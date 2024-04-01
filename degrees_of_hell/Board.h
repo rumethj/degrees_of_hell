@@ -40,6 +40,11 @@ public:
      */
     Board(std::string setUpFilePath, Spinner& spinner);
 
+    /**
+     * @brief Destructor for Board class
+     *
+     * Delets all memory allocations in object
+     */
     ~Board();
 
 

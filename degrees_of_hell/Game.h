@@ -27,6 +27,12 @@ public:
      * @param[in] rounds Number of rounds to play
      */
     Game(std::vector<std::string> players, std::string boardFilePath, int rounds);
+
+    /**
+     * @brief Destructor for Game class
+     *
+     * Delets all memory allocations in object
+     */
     ~Game();
 
     /**
