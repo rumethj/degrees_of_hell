@@ -89,7 +89,7 @@ void Game::StartGame()
             int newPlayerPosition = mPlayers[j]->GetPosition() + playerSpin;
             mPlayers[j]->SetPosition(newPlayerPosition % mpBoard->GetSize());
 
-            if (newPlayerPosition > mpBoard->GetSize()) // Check if player passes Welcome Week
+            if (newPlayerPosition >= mpBoard->GetSize()) // Check if player passes/lands on Welcome Week
             {
                 mPlayers[j]->AddMotivation(250);
                 mPlayers[j]->UpdateYear();

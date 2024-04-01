@@ -18,8 +18,3 @@ int CSpace::GetType() const
     return mType;
 }
 
-void CSpace::PlayerLands(CPlayer& player)
-{
-    // Landing message
-    std::cout << player.GetName() << " lands on " << mName << std::endl;
-}
