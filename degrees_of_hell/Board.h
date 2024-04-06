@@ -26,8 +26,8 @@ class Board
 private:
     Spinner& mSpinner;
     std::vector<CSpace*> mBoard;
-    int mPlagiarismHearingIndex;
-    int mAccusedOfPlagiarismIndex;
+    int mPlagiarismHearingIndex = 32;
+    int mAccusedOfPlagiarismIndex = 16;
 
 public:
     /**
@@ -38,14 +38,14 @@ public:
      * @param[in] setUpFilePath The file path for setting up the board
      * @param[in] spinner Reference to the spinner object
      */
-    Board(std::string setUpFilePath, Spinner& spinner);
+    Board( std::string setUpFilePath, Spinner& spinner );
 
     /**
      * @brief Destructor for Board class
      *
      * Delets all memory allocations in object
      */
-    ~Board();
+    ~Board( );
 
 
 
@@ -54,7 +54,7 @@ public:
      *
      * @return The size of the board
      */
-    int GetSize() const;
+    int GetSize( ) const;
 
 
      /**
@@ -63,7 +63,7 @@ public:
       * @param[in] type The type of space to search for
       * @return The index of the first space with the specified type
       */
-    int GetSpaceIndex(int type) const;
+    int GetSpaceIndex( int type ) const;
 
 
     /**
@@ -72,12 +72,12 @@ public:
      * @param[in] spacePos The position of the space
      * @return The name of the space at the specified position
      */
-    std::string GetSpaceName(int spacePos) const;
+    std::string GetSpaceName( int spacePos ) const;
 
     /**
      * @brief Displays the names of all spaces on the board
      */
-    void ShowBoard() const;
+    void ShowBoard( ) const;
 
     /**
      * @brief Executes the action associated with the space where the player lands
@@ -95,5 +95,5 @@ private:
      * @param[in] setUpFilePath The file path for setting up the board
      * @param[in] spinner Reference to the spinner object
      */
-    void CreateBoard(std::string setUpFilePath, Spinner& spinner);
+    void CreateBoard( std::string setUpFilePath, Spinner& spinner );
 };

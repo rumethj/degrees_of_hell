@@ -12,7 +12,7 @@ public:
      * @param[in] type The type of the space
      * @param[in] name The name of the plagiarism hearing space
      */
-    PlagiarismHearing(int type, std::string name);
+    PlagiarismHearing( int type, std::string name );
 
 
     /**
@@ -22,6 +22,6 @@ public:
      *
      * @param[in] player The player landing on the plagiarism hearing space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 };

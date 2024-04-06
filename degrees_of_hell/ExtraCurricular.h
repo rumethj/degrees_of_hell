@@ -6,8 +6,8 @@
 class ExtraCurricular : public CSpace
 {
 private:
-    int mMotivationalCost;
-    int mSuccessAchievement;
+    int mMotivationalCost = 100;
+    int mSuccessAchievement = 20;
     std::vector<CPlayer*> mUndertakenBy;
 
 public:
@@ -18,14 +18,14 @@ public:
      * @param[in] name The name of the extracurricular activity
      * @param[in] motivationalCost The motivational cost of undertaking the activity
      */
-    ExtraCurricular(int type, std::string name, int motivationalCost);
+    ExtraCurricular( int type, std::string name, int motivationalCost );
 
     /**
      * @brief Destructor for ExtraCurricular class
      *
      * Delets all memory allocations in object
      */
-    ~ExtraCurricular();
+    ~ExtraCurricular( );
 
     /**
      * @brief Handles actions when a player lands on the extracurricular activity space
@@ -34,7 +34,7 @@ public:
      *
      * @param[in] player The player landing on the extracurricular activity space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 private: 
     /**
@@ -44,7 +44,7 @@ private:
      *
      * @param[in] player The player undertaking the activity
      */
-    void UndertakeActivity(CPlayer& player);
+    void UndertakeActivity( CPlayer& player );
 
     /**
      * @brief Undertakes the extracurricular activity for a player with help from a previous participant
@@ -57,7 +57,7 @@ private:
      * @param[in] currentPlayer The current player undertaking the activity
      * @param[in] previousPlayer The player who previously undertook the activity
      */
-    void UndertakeActivity(CPlayer& currentPlayer, CPlayer& previousPlayer);
+    void UndertakeActivity( CPlayer& currentPlayer, CPlayer& previousPlayer );
 
 
 };

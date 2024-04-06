@@ -2,13 +2,8 @@
 #include "Board.h"
 
 
-CPlayer::CPlayer(std::string name, Board& board)
-    : mName(name),
-    mYear( 1 ),
-    mMotivation( 1000 ),
-    mSuccess( 0 ),
-    mPosition( 0 ),
-    mpBoard( board )
+CPlayer::CPlayer( std::string name, Board& board )
+    : mName( name ),  mYear( 1 ),  mMotivation( 1000 ),  mSuccess( 0 ),  mPosition( 0 ), mpBoard( board )
 {
 }
 
@@ -18,59 +13,59 @@ void CPlayer::AddCompleteAssessment( Assessment* assessment )
 }
 
 
-int CPlayer::GetSpaceIndex(int type) const
+int CPlayer::GetSpaceIndex( int type ) const
 {
-    return mpBoard.GetSpaceIndex(type);
+    return mpBoard.GetSpaceIndex( type );
 }
 
-std::string CPlayer::GetName() const
+std::string CPlayer::GetName( ) const
 {
     return mName;
 }
 
-int CPlayer::GetPosition() const
+int CPlayer::GetPosition( ) const
 {
     return mPosition;
 }
 
-int CPlayer::GetMotivation() const
+int CPlayer::GetMotivation( ) const
 {
     return mMotivation;
 }
 
 
-int CPlayer::GetSuccess() const
+int CPlayer::GetSuccess( ) const
 {
     return mSuccess;
 }
 
-int CPlayer::GetYear() const
+int CPlayer::GetYear( ) const
 {
     return mYear;
 }
 
 
-void CPlayer::SetPosition(int pos)
+void CPlayer::SetPosition( int pos )
 {
     mPosition = pos;
 }
 
-void CPlayer::AddMotivation(int motivation)
+void CPlayer::AddMotivation( int motivation )
 {
     mMotivation += motivation;
 }
 
-void CPlayer::DeductMotivation(int motivation)
+void CPlayer::DeductMotivation( int motivation )
 {
     mMotivation -= motivation;
 }
 
-void CPlayer::AddSuccess(int success)
+void CPlayer::AddSuccess( int success )
 {
     mSuccess += success;
 }
 
-void CPlayer::UpdateYear()
+void CPlayer::UpdateYear( )
 {
     mYear += 1;
 }

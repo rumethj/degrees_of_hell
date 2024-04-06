@@ -18,7 +18,7 @@ public:
      * @param[in] name The name of the space
      * @param[in] spinner Reference to the spinner object
      */
-    Bonus(int type, std::string name, Spinner& spinner);
+    Bonus( int type, std::string name, Spinner& spinner );
 
     ~Bonus();
 
@@ -30,7 +30,7 @@ public:
      *
      * @param[in] player The player landing on the Bonus space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 private:
     /**
@@ -38,7 +38,7 @@ private:
      *
      * Populates the bonus data map with spin messages and corresponding motivation gains.
      */
-    void InitialiseBonusData();
+    void InitialiseBonusData( );
 
 };
 

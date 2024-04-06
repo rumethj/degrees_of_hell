@@ -9,7 +9,7 @@
 class Spinner
 {
 private:
-    int mSeed;
+    int mSeed = 48;
 
 public:
     /**
@@ -19,7 +19,7 @@ public:
      *
      * @param[in] filePath File path to read the seed value from
      */
-    Spinner(std::string filePath);
+    Spinner( std::string filePath );
 
 
 
@@ -32,7 +32,7 @@ public:
      * @param[in] player The player spinning the spinner
      * @return The spin result (a random integer between 1 and 10)
      */
-    int GetSpin(CPlayer& player) const;
+    int GetSpin( CPlayer& player ) const;
 
 private:
     /**
@@ -40,6 +40,6 @@ private:
      *
      * @return A random integer between 1 and 10
      */
-    int GetRandom() const;
+    int GetRandom( ) const;
 };
 

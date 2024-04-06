@@ -9,9 +9,9 @@
 class Assessment : public CSpace
 {
 private:
-    int mMotivationalCost;
-    int mSuccessAchievement;
-    int mYear;
+    int mMotivationalCost = 0;
+    int mSuccessAchievement = 0;
+    int mYear = 1;
     std::vector<CPlayer*> mCompletedBy;
 
 public:
@@ -24,7 +24,7 @@ public:
      * @param[in] successAchievement The success achieved upon completing the assessment
      * @param[in] year The year in which the assessment is due
      */
-    Assessment(int type,std::string name,int motivationalCost,int successAchievement,int year);
+    Assessment( int type, std::string name, int motivationalCost, int successAchievement, int year );
 
     /**
      * @brief Destructor for Assessment class
@@ -37,7 +37,7 @@ public:
      *
      * @param[in] player The player landing on the assessment space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 private:
     /**
@@ -47,7 +47,7 @@ private:
      *
      * @param[in] player The player completing the assessment
      */
-    void CompleteAssessment(CPlayer& player);
+    void CompleteAssessment( CPlayer& player );
 
     /**
      * @brief Completes the assessment for a player with help from a previous completer
@@ -59,6 +59,6 @@ private:
      * @param[in] currentPlayer The current player completing the assessment
      * @param[in] completedPlayer The player who previously completed the assessment
      */
-    void CompleteAssessment(CPlayer& currentPlayer, CPlayer& completedPlayer);
+    void CompleteAssessment( CPlayer& currentPlayer, CPlayer& completedPlayer );
 };
 

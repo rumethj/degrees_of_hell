@@ -1,7 +1,6 @@
 #pragma once
 #include <map>
 
-
 #include "CSpace.h"
 #include "Spinner.h"
 
@@ -21,9 +20,9 @@ public:
      * @param[in] name The name of the space
      * @param[in] spinner Reference to the spinner object
      */
-    Bogus(int type, std::string name, Spinner& spinner);
+    Bogus( int type, std::string name, Spinner& spinner );
 
-    ~Bogus();
+    ~Bogus( );
 
     /**
      * @brief Handles actions when a player lands on the Bogus space
@@ -32,7 +31,7 @@ public:
      *
      * @param[in] player The player landing on the Bogus space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 private:
     /**
@@ -40,5 +39,5 @@ private:
      *
      * Populates the bogus data map with spin messages and corresponding motivation costs.
      */
-    void InitialiseBogusData();
+    void InitialiseBogusData( );
 };

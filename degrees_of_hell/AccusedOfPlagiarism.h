@@ -9,7 +9,7 @@
 class AccusedOfPlagiarism :public CSpace
 {
 private:
-    int mMotivationCost;
+    int mMotivationCost = 50;
     const int mkPlagiarismHearingIndex = 6;
 
 public:
@@ -20,7 +20,7 @@ public:
      * @param[in] type The type of the space
      * @param[in] name The name of the space
      */
-    AccusedOfPlagiarism(int type, std::string name);
+    AccusedOfPlagiarism( int type, std::string name );
 
 
     /**
@@ -31,7 +31,7 @@ public:
      *
      * @param[in] player The player landing on the AccusedOfPlagiarism space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 };
 

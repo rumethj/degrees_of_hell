@@ -8,8 +8,8 @@
 class CSpace
 {
 private:
-    int mType;
-    std::string mName;
+    int mType = 0;
+    std::string mName = "";
 
 public:
     /**
@@ -25,14 +25,14 @@ public:
      *
      * @return mName The name of the space
      */
-    std::string GetName() const;
+    std::string GetName( ) const;
 
     /**
      * @brief Gets the type of the space
      *
      * @return mType The type of the space
      */
-    int GetType() const;
+    int GetType( ) const;
 
     /**
      * @brief Handles actions when a player lands on the space

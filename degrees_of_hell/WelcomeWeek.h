@@ -4,7 +4,7 @@
 class WelcomeWeek : public CSpace
 {
 private:
-    int mMotivationGain;
+    int mMotivationGain = 250;
 
 public:
     /**
@@ -13,7 +13,7 @@ public:
      * @param[in] type The type of the space
      * @param[in] name The name of the Welcome Week space
      */
-    WelcomeWeek(int type, std::string name);
+    WelcomeWeek( int type, std::string name );
 
     /**
      * @brief Handles actions when a player lands on the Welcome Week space
@@ -23,6 +23,6 @@ public:
      *
      * @param[in] player The player landing on the Welcome Week space
      */
-    void PlayerLands(CPlayer& player) override;
+    void PlayerLands( CPlayer& player ) override;
 
 };

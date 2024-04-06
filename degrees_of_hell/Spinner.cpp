@@ -1,10 +1,10 @@
 #include "Spinner.h"
 
 
-Spinner::Spinner(std::string filePath) 
+Spinner::Spinner( std::string filePath ) 
 {
-    std::ifstream seedFile(filePath);
-    if (seedFile) 
+    std::ifstream seedFile( filePath );
+    if ( seedFile ) 
     {
         seedFile >> mSeed; // Read the seed value from the file
     }
@@ -19,21 +19,21 @@ Spinner::Spinner(std::string filePath)
     }
 
     // Seed the random number generator with the obtained seed value
-    srand(mSeed);
+    srand( mSeed );
 
-    seedFile.close();
+    seedFile.close( );
 }
 
-int Spinner::GetRandom() const
+int Spinner::GetRandom( ) const
 {
     //get a random number between 1 and 10
-    return static_cast<int>(static_cast<double>(rand()) / (RAND_MAX + 1) * 10.0f + 1);
+    return static_cast<int>( static_cast<double>( rand( ) ) / ( RAND_MAX + 1 ) * 10.0f + 1 );
 }
 
-int Spinner::GetSpin(CPlayer& player) const
+int Spinner::GetSpin( CPlayer& player ) const
 {
-    int playerSpin = GetRandom(); // Get number
-    std::cout << player.GetName() << " spins " << playerSpin << std::endl; // Spin message
+    int playerSpin = GetRandom( ); // Get number
+    std::cout << player.GetName( ) << " spins " << playerSpin << std::endl; // Spin message
 
     return playerSpin;
 }
